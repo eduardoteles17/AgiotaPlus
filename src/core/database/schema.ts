@@ -20,3 +20,7 @@ export const installments = sqliteTable("installment", {
 
 export type Installment = InferSelectModel<typeof installments>
 
+export const schema = {
+  debts,
+  installments,
+}
