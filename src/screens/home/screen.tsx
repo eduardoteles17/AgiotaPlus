@@ -1,9 +1,13 @@
-import {Button} from "react-native";
+import {Button} from "react-native-paper"
 
 export function HomeScreen() {
-  return <Button title="Hello World!"
-                 onPress={() => {
-                   console.log("Hello World!")
-                 }}
-  />
+  return (
+    <Button
+      onPress={() => {
+        console.log("Hello World!")
+      }}
+    >
+      Hello World!
+    </Button>
+  );
 }

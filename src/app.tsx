@@ -1,8 +1,11 @@
 import {Navigation} from "@/core/navigation"
+import {Providers} from "./providers";
 
 export function App() {
   return (
-    <Navigation/>
+    <Providers>
+      <Navigation/>
+    </Providers>
   );
 }
 
