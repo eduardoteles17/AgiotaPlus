@@ -1,6 +1,8 @@
-import { ReactNode } from "react";
+import {ReactNode} from "react";
 import {PaperProvider} from "react-native-paper"
 import {useTheme} from "@/styles/theme";
+import {QueryClientProvider} from "@tanstack/react-query";
+import {queryClient} from "@/core/react-query";
 
 type ProviderProps = {
   children: ReactNode;
@@ -9,8 +11,10 @@ type ProviderProps = {
 export function Providers({children}: ProviderProps) {
   const theme = useTheme()
   return (
-    <PaperProvider theme={theme}>
-      {children}
-    </PaperProvider>
+    <QueryClientProvider client={queryClient}>
+      <PaperProvider theme={theme}>
+        {children}
+      </PaperProvider>
+    </QueryClientProvider>
   )
 }
