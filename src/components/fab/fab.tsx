@@ -1,17 +1,17 @@
-import {FAB, FABProps, Portal} from "react-native-paper";
-import {ViewStyle} from "react-native";
+import { ViewStyle } from 'react-native';
+import { FAB, FABProps, Portal } from 'react-native-paper';
 
 export type FabProps = {
-  style?: ViewStyle,
-} & Omit<FABProps, "style">;
+  style?: ViewStyle;
+} & Omit<FABProps, 'style'>;
 
-export function Fab({label = "", ...props}: FabProps) {
+export function Fab({ label = '', ...props }: FabProps) {
   return (
     <Portal>
       <FAB
         label={label}
         style={{
-          position: "absolute",
+          position: 'absolute',
           margin: 16,
           right: 0,
           bottom: 0,
@@ -20,5 +20,5 @@ export function Fab({label = "", ...props}: FabProps) {
         {...props}
       />
     </Portal>
-  )
+  );
 }

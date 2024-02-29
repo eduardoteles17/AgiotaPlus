@@ -1,1 +1,1 @@
-export {ListDebtsScreen} from "./screen"
+export { ListDebtsScreen } from './screen';

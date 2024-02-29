@@ -1,3 +1,3 @@
 export const DebtsQueryKeys = {
-  all: ["debts"] as const,
-}
+  all: ['debts'] as const,
+};

@@ -1,2 +1,2 @@
-export {VStack} from "./v-stack"
-export type {VStackProps} from "./v-stack"
+export { VStack } from './v-stack';
+export type { VStackProps } from './v-stack';

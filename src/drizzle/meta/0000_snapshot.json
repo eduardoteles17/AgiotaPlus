@@ -87,12 +87,8 @@
           "name": "installment_debtId_debt_id_fk",
           "tableFrom": "installment",
           "tableTo": "debt",
-          "columnsFrom": [
-            "debtId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["debtId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }

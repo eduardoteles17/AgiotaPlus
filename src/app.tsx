@@ -1,7 +1,9 @@
-import {Navigation} from "@/core/navigation"
-import {Providers} from "./providers";
-import {useApp} from "@/core/app";
-import {useEffect} from "react";
+import { useEffect } from 'react';
+
+import { useApp } from '@agiota-plus/core/app';
+import { Navigation } from '@agiota-plus/core/navigation';
+
+import { Providers } from './providers';
 
 export function App() {
   const app = useApp();
@@ -12,8 +14,7 @@ export function App() {
 
   return (
     <Providers>
-      <Navigation/>
+      <Navigation />
     </Providers>
   );
 }
-

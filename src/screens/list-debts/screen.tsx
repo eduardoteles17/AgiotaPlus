@@ -1,38 +1,39 @@
-import {useQuery} from "@tanstack/react-query";
-import {List} from "react-native-paper"
-import {listAllDebts} from "@/services/debts";
-import {FlatList} from "react-native";
-import {useMemo} from "react";
-import {Fab} from "@/components/fab";
-import {useIsFocused} from "@react-navigation/native";
-import {DebtsQueryKeys} from "@/constants/query-keys/debts";
+import { useMemo } from 'react';
+import { FlatList } from 'react-native';
+import { List } from 'react-native-paper';
+
+import { Fab } from '@agiota-plus/components/fab';
+import { DebtsQueryKeys } from '@agiota-plus/constants/query-keys/debts';
+import { DebtsRoutes } from '@agiota-plus/constants/routes/debts';
+import { listAllDebts } from '@agiota-plus/services/debts';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
+import { useQuery } from '@tanstack/react-query';
 
 export function ListDebtsScreen() {
+  const navigation = useNavigation();
   const isFocused = useIsFocused();
 
   const debtsQuery = useQuery({
     queryKey: DebtsQueryKeys.all,
     queryFn() {
       return listAllDebts();
-    }
+    },
   });
+
+  const onNewDebtHandler = () => {
+    navigation.navigate(DebtsRoutes.create);
+  };
 
   const data = useMemo(() => debtsQuery.data, [debtsQuery.data]);
 
   return (
     <>
-      <Fab
-        visible={isFocused}
-        icon={"plus"}
-      />
+      <Fab icon="plus" visible={isFocused} onPress={onNewDebtHandler} />
       <FlatList
         data={data}
-        keyExtractor={(item) => item.id}
-        renderItem={({item}) => (
-          <List.Item
-            title={item.name}
-            description={item.amount}
-          />
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <List.Item title={item.name} description={item.amount} />
         )}
       />
     </>
