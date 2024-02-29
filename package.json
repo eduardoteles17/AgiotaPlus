@@ -38,6 +38,7 @@
     "@types/uuid": "^9.0.8",
     "babel-plugin-inline-import": "^3.0.0",
     "drizzle-kit": "^0.20.14",
+    "eslint-config-cod3rocket": "^1.0.3",
     "typescript": "^5.1.3"
   }
 }
